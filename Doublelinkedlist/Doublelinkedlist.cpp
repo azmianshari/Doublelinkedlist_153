@@ -36,7 +36,14 @@ void Doublelinkedlist::addNode() {
 	cin >> nim;
 	cout << "\nEnter the name of student :";
 	cin >> nama;
-	Node* newNode = new Node();
-	newNode->noMhs = nim;
-	newNode->nama = nama;
+	Node* newNode = new Node(); //Step 1
+	newNode->noMhs = nim; //Step 2
+	newNode->nama = nama; //Step 3
+
+	if (START == NULL || nim <= START->noMhs) {
+		if (START != NULL && nim == START->noMhs) {
+			cout << "\nDuplicate number not allowed" << endl;
+			return;
+		}
+	}
 }
